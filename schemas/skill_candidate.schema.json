@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["id", "candidate_id", "status", "trusted", "type", "description", "steps", "evidence", "review", "score", "created_at"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "candidate_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["candidate", "validated", "team_proposed", "approved", "rejected", "quarantined", "superseded", "merged", "stale", "archived"] },
+    "trusted": { "type": "boolean" },
+    "type": { "const": "skill" },
+    "description": { "type": "string", "minLength": 1 },
+    "steps": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "evidence": { "type": "object" },
+    "review": { "type": "object" },
+    "score": { "type": "object" },
+    "created_at": { "type": "string", "minLength": 1 }
+  }
+}

@@ -1,0 +1,26 @@
+version: 1
+tools:
+  - { id: Read, type: read, risk: low }
+  - { id: Grep, type: read, risk: low }
+  - { id: Glob, type: read, risk: low }
+  - { id: LS, type: read, risk: low }
+  - { id: NotebookRead, type: read, risk: low }
+  - { id: TodoWrite, type: planning, risk: low }
+  - { id: update_plan, type: planning, risk: low }
+  - { id: request_user_input, type: planning, risk: low }
+  - { id: view_image, type: read, risk: low }
+  - { id: tool_search_tool, type: read, risk: low }
+  - { id: Task, type: planning, risk: low }
+  - { id: SlashCommand, type: planning, risk: low }
+  - { id: Write, type: write, risk: medium, requires_confirmation: true }
+  - { id: Edit, type: write, risk: medium, requires_confirmation: true }
+  - { id: NotebookEdit, type: write, risk: medium, requires_confirmation: true }
+  - { id: ApplyPatch, type: write, risk: medium, requires_confirmation: true }
+  - { id: Bash, type: command, risk: medium }
+  - { id: BashOutput, type: command, risk: low }
+  - { id: KillShell, type: command, risk: medium, requires_confirmation: true }
+  - { id: WebFetch, type: network, risk: medium, requires_confirmation: true }
+  - { id: WebSearch, type: network, risk: medium, requires_confirmation: true }
+  - { id: tool.git.status, type: command, command: git status, risk: low }
+  - { id: tool.git.commit, type: command, command: git commit, risk: medium, requires_confirmation: true }
+  - { id: tool.network.fetch, type: network, risk: high, allowed: false }

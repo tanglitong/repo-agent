@@ -1,0 +1,8 @@
+id: skill.bugfix.red-green-refactor
+version: 1
+status: approved
+title: 红-绿-重构缺陷修复
+steps:
+  - 先用回归测试复现失败。
+  - 实施最小且安全的修改。
+  - 运行针对性测试和相关的更广泛检查。

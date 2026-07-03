@@ -1,0 +1,4 @@
+id: adapter.codex
+name: Codex
+version: 1
+supports: { context_pack: true, hook: true, mcp: true, json_cli: true }

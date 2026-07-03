@@ -1,0 +1,80 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/repo-agent/repo-agent.bundle.js",
+              "hook",
+              "session-start",
+              "--tool",
+              "claude-code"
+            ],
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/repo-agent/repo-agent.bundle.js",
+              "hook",
+              "user-prompt-submit",
+              "--tool",
+              "claude-code"
+            ],
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/repo-agent/repo-agent.bundle.js",
+              "hook",
+              "pre-tool-use",
+              "--tool",
+              "claude-code"
+            ],
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/repo-agent/repo-agent.bundle.js",
+              "hook",
+              "stop",
+              "--tool",
+              "claude-code"
+            ],
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ]
+  }
+}

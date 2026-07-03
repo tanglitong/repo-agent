@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://repo-agent.local/schemas/config.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "mode", "network"],
+  "properties": {
+    "version": { "const": 1 },
+    "mode": { "enum": ["personal", "team"] },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": { "enum": ["offline", "internal_only", "explicit_allow", "unrestricted"] },
+        "allow": { "type": "array", "items": { "type": "string" } },
+        "deny": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "write_to": { "type": "string", "minLength": 1 }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "include_candidate_suggestions": { "type": "boolean" },
+        "max_candidate_suggestions": { "type": "integer", "minimum": 0, "maximum": 1 },
+        "min_relevance": { "type": "number", "minimum": 0, "maximum": 1 },
+        "max_items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "memories": { "type": "integer", "minimum": 0 },
+            "skills": { "type": "integer", "minimum": 0 },
+            "fix_patterns": { "type": "integer", "minimum": 0 },
+            "candidate_suggestions": { "type": "integer", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "max_chars": { "type": "integer", "minimum": 1 },
+            "max_tokens_estimate": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "recurring_error_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "thresholds": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "inbox": { "type": "integer", "minimum": 1 },
+            "propose_fix_pattern": { "type": "integer", "minimum": 1 },
+            "propose_skill": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "high_risk_multiplier": { "type": "number", "exclusiveMinimum": 0 },
+        "include_in_context": { "type": "boolean" },
+        "max_context_recommendations": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "automatic_growth_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "validated_preflights": { "type": "integer", "minimum": 3 },
+        "validated_days": { "type": "integer", "minimum": 2 },
+        "background_observation_threshold": { "type": "integer", "minimum": 1 },
+        "background_max_age_hours": { "type": "number", "minimum": 1 }
+      }
+    },
+    "asset_lifecycle_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "private_automatic_cleanup": { "type": "boolean" },
+        "team_proposal_only": { "const": true },
+        "thresholds": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "stale": { "type": "number", "minimum": 0, "maximum": 1 },
+            "archive": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "durations_days": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "stale": { "type": "number", "minimum": 0 },
+            "archive": { "type": "number", "minimum": 0 },
+            "delete": { "type": "number", "minimum": 0 },
+            "private_retention": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "closure_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "abandon_after_hours": { "type": "number", "minimum": 1 },
+        "max_events_per_preflight": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "max_event_bytes": { "type": "integer", "minimum": 1024, "maximum": 262144 }
+      }
+    },
+    "evidence_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "freshness_half_life_days": { "type": "number", "minimum": 1 }
+      }
+    }
+  }
+}

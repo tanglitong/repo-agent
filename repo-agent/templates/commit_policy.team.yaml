@@ -1,0 +1,3 @@
+version: 1
+default_mode: ask
+always_ask_before_commit: true

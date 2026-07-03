@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://repo-agent.local/schemas/hook_routes.schema.json",
+  "type": "object",
+  "required": ["version", "routes"],
+  "properties": {
+    "version": { "const": 1 },
+    "routes": {
+      "type": "object",
+      "required": ["session-start", "user-prompt-submit", "stop"],
+      "properties": {
+        "session-start": {
+          "type": "object",
+          "required": ["handler"],
+          "properties": {
+            "handler": { "const": "session_handshake" }
+          }
+        },
+        "user-prompt-submit": {
+          "type": "object",
+          "required": ["handler", "context_sources", "block_on_risk"],
+          "properties": {
+            "handler": { "const": "task_preflight" },
+            "context_sources": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "instructions",
+                  "memories",
+                  "skills",
+                  "fix_patterns",
+                  "candidates",
+                  "recurring_errors"
+                ]
+              }
+            },
+            "block_on_risk": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": ["low", "medium", "high", "blocked"]
+              }
+            }
+          }
+        },
+        "pre-tool-use": {
+          "type": "object",
+          "required": ["handler"],
+          "properties": {
+            "handler": { "const": "tool_policy" }
+          }
+        },
+        "stop": {
+          "type": "object",
+          "required": ["handler", "closure_steps"],
+          "properties": {
+            "handler": { "const": "task_closure" },
+            "closure_steps": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "commit_advice",
+                  "audit_recorded",
+                  "observation_captured",
+                  "recurring_analyzed",
+                  "lifecycle_evaluated",
+                  "metrics_updated"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

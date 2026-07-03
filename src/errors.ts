@@ -1,0 +1,39 @@
+export type ErrorCode =
+  | "E_PROJECT_NOT_INITIALIZED"
+  | "E_UNSUPPORTED_NODE_VERSION"
+  | "E_CONFIG_PARSE"
+  | "E_CONFIG_SCHEMA"
+  | "E_POLICY_BLOCKED"
+  | "E_SECRET_DETECTED"
+  | "E_INVALID_CANDIDATE"
+  | "E_DUPLICATE_CANDIDATE"
+  | "E_PROTECTED_FILE"
+  | "E_DANGEROUS_COMMAND"
+  | "E_LOCAL_CONFIG_RELAXES_POLICY"
+  | "E_PERMISSION_DENIED"
+  | "E_WRITE_FAILED"
+  | "E_UPGRADE_PACKAGE_INVALID"
+  | "E_UPGRADE_NOT_AVAILABLE"
+  | "E_UPGRADE_PATH_MISSING"
+  | "E_UPGRADE_PATH_AMBIGUOUS"
+  | "E_UPGRADE_CONFIRMATION_REQUIRED"
+  | "E_UPGRADE_CONFLICT"
+  | "E_UPGRADE_ROLLBACK_FAILED"
+  | "E_UNSUPPORTED_ENTRY"
+  | "E_INTEGRATION_CONFLICT"
+  | "E_HOOK_INPUT"
+  | "E_INVALID_TOOL_INPUT"
+  | "E_RUNTIME_LOCK"
+  | "E_RUNTIME_LIMIT"
+  | "E_RUNTIME_DUPLICATE"
+  | "E_UNKNOWN_COMMAND";
+
+export class CliError extends Error {
+  constructor(
+    public readonly code: ErrorCode,
+    message: string,
+    public readonly path?: string,
+  ) {
+    super(message);
+  }
+}

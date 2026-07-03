@@ -1,0 +1,3 @@
+version: 1
+default_mode: keep_local
+always_ask_before_commit: true

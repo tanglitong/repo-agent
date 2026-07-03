@@ -1,0 +1,56 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/repo-agent/repo-agent.bundle.js\" hook session-start --tool codex",
+            "commandWindows": "powershell.exe -NoProfile -Command \"$r=(git rev-parse --show-toplevel); & node (Join-Path $r 'repo-agent/repo-agent.bundle.js') hook session-start --tool codex\"",
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/repo-agent/repo-agent.bundle.js\" hook user-prompt-submit --tool codex",
+            "commandWindows": "powershell.exe -NoProfile -Command \"$r=(git rev-parse --show-toplevel); & node (Join-Path $r 'repo-agent/repo-agent.bundle.js') hook user-prompt-submit --tool codex\"",
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/repo-agent/repo-agent.bundle.js\" hook pre-tool-use --tool codex",
+            "commandWindows": "powershell.exe -NoProfile -Command \"$r=(git rev-parse --show-toplevel); & node (Join-Path $r 'repo-agent/repo-agent.bundle.js') hook pre-tool-use --tool codex\"",
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/repo-agent/repo-agent.bundle.js\" hook stop --tool codex",
+            "commandWindows": "powershell.exe -NoProfile -Command \"$r=(git rev-parse --show-toplevel); & node (Join-Path $r 'repo-agent/repo-agent.bundle.js') hook stop --tool codex\"",
+            "timeout": 15,
+            "statusMessage": "正在检查 repo-agent 配置"
+          }
+        ]
+      }
+    ]
+  }
+}

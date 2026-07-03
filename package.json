@@ -1,0 +1,46 @@
+{
+  "name": "repo-agent",
+  "version": "1.0.0",
+  "description": "离线优先、仓库原生的 AI 编程 Agent 治理层",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanglitong/repo-agent.git"
+  },
+  "homepage": "https://github.com/tanglitong/repo-agent#readme",
+  "bugs": {
+    "url": "https://github.com/tanglitong/repo-agent/issues"
+  },
+  "keywords": [
+    "ai-agent",
+    "code-governance",
+    "codex",
+    "claude-code",
+    "mcp",
+    "opencode"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && npm run build && node scripts/package-offline.mjs && node --test",
+    "package:offline": "npm run build && node scripts/package-offline.mjs",
+    "release:prepare": "npm run build && node scripts/package-offline.mjs --sync-installed",
+    "release:verify": "node scripts/verify-release.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.0",
+    "esbuild": "0.28.1",
+    "fflate": "0.8.3",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "jsonc-parser": "3.3.1",
+    "minimatch": "9.0.9",
+    "yaml": "2.9.0"
+  }
+}

@@ -1,0 +1,4 @@
+id: review.testing
+applies_to: [src/**, tests/**]
+checks: [是否包含回归测试？, 是否运行了相关测试？]
+required_for: [medium, high, blocked]

@@ -1,0 +1,4 @@
+id: adapter.claude-code
+name: Claude Code
+version: 1
+supports: { context_pack: true, hook: true, mcp: true, json_cli: true }

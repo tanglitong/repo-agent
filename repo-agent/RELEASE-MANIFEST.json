@@ -1,0 +1,14 @@
+{
+  "package_format": 1,
+  "upgrade_protocol": 1,
+  "tool_version": "1.0.0",
+  "minimum_upgrader_version": "1.0.0",
+  "asset_versions": {
+    "template": "1.0.0",
+    "schema": "1.0.0",
+    "builtin_policy": "1.0.0",
+    "builtin_skill": "1.0.0",
+    "builtin_fix_pattern": "1.0.0"
+  },
+  "migrations": []
+}

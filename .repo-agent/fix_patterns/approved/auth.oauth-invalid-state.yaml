@@ -1,0 +1,12 @@
+id: fix.auth.oauth-invalid-state
+version: 1
+status: approved
+title: OAuth state 无效
+patterns:
+  - invalid oauth state
+  - oauth callback state mismatch
+guidance:
+  - 检查缺失、无效、过期和重放 state 的处理。
+  - 修改行为前先补充负向回归测试。
+recurrence:
+  occurrences: 0

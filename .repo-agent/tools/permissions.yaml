@@ -1,0 +1,14 @@
+version: 1
+defaults: { network: deny, shell: allow_safe, git_write: require_confirmation }
+blocked: [tool.network.fetch, tool.secret.read, tool.command.sudo]
+requires_confirmation:
+  - tool.git.commit
+  - tool.git.push
+  - tool.patch.apply
+  - Write
+  - Edit
+  - NotebookEdit
+  - ApplyPatch
+  - KillShell
+  - WebFetch
+  - WebSearch

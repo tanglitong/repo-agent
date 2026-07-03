@@ -1,0 +1,4 @@
+id: review.database
+applies_to: [database/migrations/**]
+checks: [回滚是否安全？, 是否可能丢失数据？]
+required_for: [high, blocked]

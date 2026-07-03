@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "repo-agent": {
+      "type": "local",
+      "command": [
+        "node",
+        "repo-agent/repo-agent.bundle.js",
+        "mcp",
+        "stdio"
+      ],
+      "enabled": true,
+      "environment": {
+        "REPO_AGENT_INTEGRATION_VERSION": "1.0.0"
+      }
+    }
+  },
+  "permission": {
+    "repo-agent_recover_closure": "ask",
+    "repo-agent_promote_candidate": "ask",
+    "repo-agent_propose_memory": "ask",
+    "repo-agent_propose_skill": "ask",
+    "repo-agent_propose_fix_pattern": "ask",
+    "repo-agent_record_trace": "ask",
+    "repo-agent_analyze_recurring_errors": "ask",
+    "repo-agent_propose_fix_pattern_from_recurring_error": "ask"
+  }
+}

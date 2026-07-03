@@ -1,0 +1,13 @@
+version: 1
+routes:
+  session-start:
+    handler: session_handshake
+  user-prompt-submit:
+    handler: task_preflight
+    context_sources: [instructions, memories, skills, fix_patterns, candidates, recurring_errors]
+    block_on_risk: [blocked]
+  pre-tool-use:
+    handler: tool_policy
+  stop:
+    handler: task_closure
+    closure_steps: [commit_advice, audit_recorded, observation_captured, recurring_analyzed, lifecycle_evaluated, metrics_updated]

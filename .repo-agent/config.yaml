@@ -1,0 +1,65 @@
+version: 1
+mode: team
+
+network:
+  mode: offline
+  allow:
+    - localhost
+    - "*.internal"
+  deny:
+    - "*"
+
+audit:
+  enabled: true
+  write_to: .repo-agent/generated/audits
+
+context:
+  include_candidate_suggestions: true
+  max_candidate_suggestions: 1
+  min_relevance: 0.15
+  max_items:
+    memories: 8
+    skills: 4
+    fix_patterns: 4
+    candidate_suggestions: 1
+  budget:
+    max_chars: 24000
+    max_tokens_estimate: 6000
+
+recurring_error_policy:
+  enabled: true
+  thresholds:
+    inbox: 2
+    propose_fix_pattern: 3
+    propose_skill: 5
+  high_risk_multiplier: 0.5
+  include_in_context: true
+  max_context_recommendations: 3
+
+automatic_growth_policy:
+  enabled: true
+  validated_preflights: 3
+  validated_days: 2
+  background_observation_threshold: 20
+  background_max_age_hours: 24
+
+asset_lifecycle_policy:
+  enabled: true
+  private_automatic_cleanup: true
+  team_proposal_only: true
+  thresholds:
+    stale: 0.45
+    archive: 0.30
+  durations_days:
+    stale: 90
+    archive: 180
+    delete: 180
+    private_retention: 180
+
+closure_policy:
+  abandon_after_hours: 24
+  max_events_per_preflight: 10000
+  max_event_bytes: 262144
+
+evidence_policy:
+  freshness_half_life_days: 180

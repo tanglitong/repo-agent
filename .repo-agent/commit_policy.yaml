@@ -1,0 +1,28 @@
+version: 1
+default_mode: ask
+
+allow_direct_commit_for:
+  - docs
+  - comments
+  - formatting
+  - low_risk_tests
+
+require_review_request_for:
+  - src/auth/**
+  - src/billing/**
+  - database/migrations/**
+  - .github/workflows/**
+  - infra/**
+  - terraform/**
+  - .repo-agent/policies/**
+  - .repo-agent/skills/approved/**
+  - .repo-agent/memories/**
+  - .repo-agent/fix_patterns/approved/**
+  - .openspec/**
+  - docs/adr/**
+
+always_ask_before_commit: true
+allow_direct_commit_memory_candidates: true
+require_review_for_approved_memory: true
+require_review_for_approved_skill: true
+require_review_for_approved_fix_pattern: true

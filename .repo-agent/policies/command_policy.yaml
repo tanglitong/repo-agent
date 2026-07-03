@@ -1,0 +1,11 @@
+version: 1
+dangerous_commands:
+  - "rm -rf"
+  - sudo
+  - "curl * | sh"
+  - "wget * | sh"
+  - "terraform apply"
+  - "kubectl apply"
+  - "docker --privileged"
+  - "gh secret"
+default_action: require_confirmation

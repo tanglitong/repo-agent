@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://repo-agent.local/schemas/commit_policy.schema.json",
+  "type": "object",
+  "required": ["version", "default_mode", "always_ask_before_commit"],
+  "properties": {
+    "version": { "const": 1 },
+    "default_mode": { "enum": ["ask", "keep_local"] },
+    "always_ask_before_commit": { "type": "boolean" }
+  }
+}

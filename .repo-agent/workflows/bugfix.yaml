@@ -1,0 +1,3 @@
+id: workflow.bugfix
+version: 1
+steps: [get_context_pack, check_policy, recommend_tests, external_agent_action, record_trace, classify_learning, get_commit_options]

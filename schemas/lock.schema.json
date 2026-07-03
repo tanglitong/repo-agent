@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://repo-agent.local/schemas/lock.schema.json",
+  "type": "object",
+  "required": ["version", "repo_agent", "generated_at"],
+  "properties": {
+    "version": { "const": 1 },
+    "repo_agent": {
+      "type": "object",
+      "required": [
+        "template_version",
+        "schema_version",
+        "builtin_policy_version",
+        "builtin_skill_version",
+        "builtin_fix_pattern_version"
+      ]
+    },
+    "generated_at": { "type": "string" },
+    "updated_at": { "type": "string" },
+    "applied_migrations": { "type": "array" },
+    "managed_assets": { "type": "object" },
+    "upgrade": { "type": "object" }
+  }
+}

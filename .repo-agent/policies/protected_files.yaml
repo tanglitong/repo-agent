@@ -1,0 +1,13 @@
+version: 1
+protected_files:
+  - .env*
+  - "*.pem"
+  - "*.key"
+  - id_rsa
+  - id_ed25519
+  - secrets.*
+  - .github/workflows/**
+  - infra/**
+  - terraform/**
+  - k8s/production/**
+  - database/migrations/**

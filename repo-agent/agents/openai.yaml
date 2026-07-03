@@ -1,0 +1,7 @@
+interface:
+  display_name: "repo-agent 控制中心"
+  short_description: "安装、更新、诊断和治理 repo-agent 项目的交互入口"
+  default_prompt: "使用 $repo-agent 打开交互菜单，选择安装、更新、诊断、经验审核或闭环恢复。"
+
+policy:
+  allow_implicit_invocation: false

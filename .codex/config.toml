@@ -1,0 +1,63 @@
+# >>> repo-agent integration managed
+# version = 1.0.0
+[mcp_servers.repo_agent]
+command = "node"
+args = ["repo-agent/repo-agent.bundle.js", "mcp", "stdio"]
+enabled = true
+required = false
+default_tools_approval_mode = "prompt"
+
+[mcp_servers.repo_agent.tools.get_context_pack]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.get_latest_preflight]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.get_closure_status]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.get_asset_evidence]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.search_assets]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.get_health_metrics]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.check_policy]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.recommend_tests]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.get_commit_options]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.classify_learning]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.list_skills]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.list_fix_patterns]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.list_recurring_errors]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.recommend_for_recurring_errors]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.detect_duplicates]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.redact_secrets]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.resolve_conflicts]
+approval_mode = "approve"
+
+[mcp_servers.repo_agent.tools.generate_patch_summary]
+approval_mode = "approve"
+# <<< repo-agent integration managed

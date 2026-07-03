@@ -1,0 +1,5 @@
+version: 1
+defaults:
+  network: deny
+  shell: allow_safe
+  git_write: require_confirmation

@@ -1,0 +1,49 @@
+name: 缺陷报告
+description: 报告可复现的 repo-agent 异常
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        安全漏洞请使用 GitHub Security Advisory 私下报告，不要填写此模板。
+  - type: input
+    id: version
+    attributes:
+      label: repo-agent 版本
+      placeholder: 例如 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 环境
+      description: 操作系统、Node.js 版本和 AI 客户端
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 提供最小、稳定的复现过程
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 粘贴前请移除密钥、路径和私人数据
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 诊断信息
+      description: 可附上已脱敏的 doctor、validate 或 health 输出

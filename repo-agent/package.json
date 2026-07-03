@@ -1,0 +1,6 @@
+{
+  "name": "repo-agent-offline",
+  "private": true,
+  "license": "MIT",
+  "type": "module"
+}

@@ -1,0 +1,15 @@
+version: 1
+repo_agent:
+  asset_version: 1.0.0
+  template_version: 1.0.0
+  schema_version: 1.0.0
+  builtin_policy_version: 1.0.0
+  builtin_skill_version: 1.0.0
+  builtin_fix_pattern_version: 1.0.0
+generated_at: 2026-07-01T03:46:42.743Z
+applied_migrations: []
+managed_assets: {}
+upgrade:
+  state: complete
+  target_version: 1.0.0
+  pending: []

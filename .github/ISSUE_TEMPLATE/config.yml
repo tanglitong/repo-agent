@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全漏洞
+    url: https://github.com/tanglitong/repo-agent/security/advisories/new
+    about: 请私下提交安全问题，不要创建公开 Issue。
+  - name: 使用文档
+    url: https://github.com/tanglitong/repo-agent/blob/main/docs/zh-CN/usage.md
+    about: 创建 Issue 前先查看安装、排障和验收说明。

@@ -1,0 +1,82 @@
+node_modules/
+repo-agent/
+dist/
+release/
+.DS_Store
+
+# 离线包 Skill 源码（非客户端发现目录）
+!/packaging/repo-agent/
+!/packaging/repo-agent/**
+
+# >>> repo-agent managed
+# 此区块由 repo-agent 自动维护，请把自定义规则写在区块之外。
+# repo-agent：团队运行程序
+!/repo-agent/
+!/repo-agent/**
+
+# repo-agent：个人配置
+/.repo-agent.local.yaml
+/.repo-agent.local.yml
+/.repo-agent-private/
+
+# repo-agent：派生文件与运行状态
+/.repo-agent/generated/
+/.repo-agent/catalog/
+/.repo-agent/cache/
+/.repo-agent/index/
+/.repo-agent/traces/
+/.repo-agent/logs/
+/.repo-agent/runs/
+/.repo-agent/artifacts/
+/.repo-agent/sessions/
+/.repo-agent/worktrees/
+/.repo-agent/tmp/
+/.repo-agent/embeddings/
+/.repo-agent/learning_inbox/
+/.repo-agent-runtime/
+
+# repo-agent：本地数据、索引、日志与临时文件
+.repo-agent/**/*.db
+.repo-agent/**/*.sqlite
+.repo-agent/**/*.sqlite3
+.repo-agent/**/*.jsonl
+.repo-agent/**/*.log
+.repo-agent/**/*.faiss
+.repo-agent/**/*.ann
+.repo-agent/**/*.hnsw
+.repo-agent/**/*.vec
+.repo-agent/**/*.bin
+.repo-agent/**/*.tmp
+.repo-agent/**/*.temp
+.repo-agent/**/*.bak
+.repo-agent/**/*.swp
+.repo-agent/**/*.swo
+
+# 敏感文件（示例模板除外）
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.*.example
+!.env.*.sample
+!.env.*.template
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+!id_rsa.pub
+id_ed25519
+id_ed25519.*
+!id_ed25519.pub
+secrets.*
+!secrets.example.*
+*.secret
+*.secrets
+
+# 操作系统临时文件
+.DS_Store
+Thumbs.db
+# <<< repo-agent managed

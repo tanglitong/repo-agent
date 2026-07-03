@@ -1,0 +1,4 @@
+id: adapter.opencode
+name: OpenCode
+version: 1
+supports: { context_pack: true, plugin: true, mcp: true, json_cli: true }

@@ -1,0 +1,6 @@
+version: 1
+aliases:
+  error.auth.oauth-invalid-state:
+    title: OAuth state 无效
+    keywords: [invalid oauth state, state mismatch, csrf state validation failed, oauth callback state mismatch]
+    scope: [src/auth/**, tests/auth/**]

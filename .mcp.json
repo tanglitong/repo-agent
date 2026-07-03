@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "repo-agent": {
+      "command": "node",
+      "args": [
+        "repo-agent/repo-agent.bundle.js",
+        "mcp",
+        "stdio"
+      ],
+      "env": {
+        "REPO_AGENT_INTEGRATION_VERSION": "1.0.0"
+      }
+    }
+  }
+}

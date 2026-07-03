@@ -1,0 +1,4 @@
+id: review.security
+applies_to: [src/auth/**, src/billing/**, .repo-agent/policies/**]
+checks: [是否泄露敏感信息？, 是否可能绕过认证？, 是否包含负向测试？]
+required_for: [high, blocked]
